@@ -7,8 +7,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
-    int insertPerson(UUID ID, Person person);
-    default int addPerson(Person person) {
+    Optional<Person> insertPerson(UUID ID, Person person);
+    default Optional<Person> addPerson(Person person) {
         UUID ID=UUID.randomUUID();
         return insertPerson(ID, person);
     }

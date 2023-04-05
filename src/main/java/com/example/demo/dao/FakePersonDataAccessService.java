@@ -11,9 +11,9 @@ import java.util.UUID;
 public class FakePersonDataAccessService implements PersonDao{
     private static List<Person> DB = new ArrayList<>();
     @Override
-    public int insertPerson(UUID ID, Person person) {
+    public Optional<Person> insertPerson(UUID ID, Person person) {
         DB.add(new Person(ID, person.getName(), person.getEmail(), person.getPassword()));
-        return 1;
+        return Optional.ofNullable(person);
     }
 
     @Override

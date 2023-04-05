@@ -18,7 +18,7 @@ public class PersonService {
         this.personDao = personDao;
     }
 
-    public int addPerson(Person person) {
+    public Optional<Person> addPerson(Person person) {
         return personDao.addPerson(person);
     }
     public List<Person> getAllPeople() {

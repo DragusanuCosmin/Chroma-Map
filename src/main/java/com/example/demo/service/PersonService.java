@@ -1,11 +1,14 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.PersonDao;
+import com.example.demo.model.Locations;
 import com.example.demo.model.Person;
+import org.antlr.v4.runtime.misc.Triple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -32,6 +35,24 @@ public class PersonService {
 }
     public Optional<Person> selectPersonbyId(UUID ID) {
         return personDao.selectPersonbyId(ID);
+    }
+    public Optional<Person> selectPersonbyName(String name) {
+        return personDao.selectPersonbyName(name);
+    }
+    public Optional<Person> selectPersonbyEmail(String email){
+        return personDao.selectPersonbyEmail(email);
+    }
+    public int addLocation(UUID ID, Triple<Integer, Integer, Color> location) {
+        return personDao.addLocation(ID, location);
+    }
+    public Optional<Triple<Integer, Integer, Color>> getLocation(UUID ID) {
+        return personDao.getLocation(ID);
+    }
+    public int updateLocation(UUID ID, Triple<Integer, Integer, Color> location) {
+        return personDao.updateLocation(ID, location);
+    }
+    public List<Locations> selectAllLocations(){
+        return personDao.selectAllLocations();
     }
 
 }

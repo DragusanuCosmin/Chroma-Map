@@ -1,0 +1,27 @@
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(100, 10px);
+  grid-template-rows: repeat(100, 10px);
+  gap: 1px;
+}
+
+.node {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.node-wall {
+  background-color: #000000;
+  /*border: 1px solid #ffffff;
+*/
+}

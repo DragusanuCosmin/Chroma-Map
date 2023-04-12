@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  display: grid;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  background: linear-gradient(132deg, rgb(65, 80, 95) 0.00%, rgb(36, 37, 38) 100.00%);
+}
+.auth-form-container,.login-form,.register-form {
+  display: flex;
+  flex-direction: column;
+
+}
+label{
+  text-align: left;
+  padding: 0.25rem 0;
+}
+input{
+  margin: 0.25rem;
+  padding: 1rem;
+  border:none;
+  border-radius:10px;
+}
+button{
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: azure;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.linkbutton{
+  text-decoration: underline;
+  color: white;
+  background: none;
+}
+.linkbutton:hover{
+  color:white;
+  background: linear-gradient(132deg, rgb(65, 80, 95) 0.00%, rgb(36, 37, 38) 100.00%);
+}

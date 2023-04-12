@@ -2,8 +2,6 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
-
-import java.awt.Color;
 import java.util.UUID;
 
 public class Locations {
@@ -13,12 +11,12 @@ public class Locations {
     @NotBlank
     private final int y;
     @NotBlank
-    private final Color color;
+    private final String color;
 
     public Locations(@JsonProperty("location_id") UUID location_id,
                   @JsonProperty("x") int x,
                   @JsonProperty("y") int y,
-                  @JsonProperty("color") Color color
+                  @JsonProperty("color") String color
     ) {
         this.location_id = location_id;
         this.x = x;
@@ -38,7 +36,7 @@ public class Locations {
         return y;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 }

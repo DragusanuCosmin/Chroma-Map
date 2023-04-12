@@ -16,19 +16,15 @@ public class Person {
     private final String email;
     @NotBlank
     private final String password;
-    @NotBlank
-    private final Locations location;
 
     public Person(@JsonProperty("id") UUID id,
                   @JsonProperty("name") String name,
                   @JsonProperty("email") String email,
-                  @JsonProperty("password") String password,
-                  @JsonProperty("location") Locations location) {
+                  @JsonProperty("password") String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.location = location;
     }
 
     public UUID getId() {
@@ -47,7 +43,4 @@ public class Person {
         return password;
     }
 
-    public Locations getLocation() {
-        return location;
-    }
 }

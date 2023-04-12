@@ -17,11 +17,11 @@ import java.util.UUID;
 public class PersonService {
     private final PersonDao personDao;
     @Autowired
-    public PersonService(@Qualifier("realDao") PersonDao personDao) {
+    public PersonService(@Qualifier("personDao") PersonDao personDao) {
         this.personDao = personDao;
     }
 
-    public Optional<Person> addPerson(Person person) {
+    public int addPerson(Person person) {
         return personDao.addPerson(person);
     }
     public List<Person> getAllPeople() {
@@ -41,18 +41,6 @@ public class PersonService {
     }
     public Optional<Person> selectPersonbyEmail(String email){
         return personDao.selectPersonbyEmail(email);
-    }
-    public int addLocation(UUID ID, Triple<Integer, Integer, Color> location) {
-        return personDao.addLocation(ID, location);
-    }
-    public Optional<Triple<Integer, Integer, Color>> getLocation(UUID ID) {
-        return personDao.getLocation(ID);
-    }
-    public int updateLocation(UUID ID, Triple<Integer, Integer, Color> location) {
-        return personDao.updateLocation(ID, location);
-    }
-    public List<Locations> selectAllLocations(){
-        return personDao.selectAllLocations();
     }
 
 }

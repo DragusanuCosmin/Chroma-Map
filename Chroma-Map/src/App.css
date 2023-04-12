@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  display: flex;
+  display: grid;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -36,9 +36,7 @@ button{
   color: white;
   background: none;
 }
-.map{
-  height: 100%;
-  width: 100%;
+.linkbutton:hover{
+  color:white;
   background: linear-gradient(132deg, rgb(65, 80, 95) 0.00%, rgb(36, 37, 38) 100.00%);
-
 }

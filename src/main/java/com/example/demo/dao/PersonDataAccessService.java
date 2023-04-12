@@ -55,7 +55,6 @@ public class PersonDataAccessService implements PersonDao{
     public int deletePersonbyId(UUID id) {
         final String sql = "DELETE FROM person WHERE id= ?";
         jdbcTemplate.update(sql, id.toString());
-        System.out.println(jdbcTemplate);
         return 1;
     }
 
@@ -70,13 +69,17 @@ public class PersonDataAccessService implements PersonDao{
     @Override
     public Optional<Person> selectPersonbyId(UUID id) {
         final String sql = "SELECT * FROM person WHERE id = ?";
-        Person person = jdbcTemplate.queryForObject(sql, new Object[]{id}, (rs, rowNum) -> {
-            String name = rs.getString("name");
-            String email = rs.getString("email");
-            String password = rs.getString("password");
-            return new Person(id, name, email, password);
-        });
-        return Optional.ofNullable(person);
+        try {
+            Person person = jdbcTemplate.queryForObject(sql, new Object[]{id}, (rs, rowNum) -> {
+                String personName = rs.getString("name");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                return new Person(id, personName, email, password);
+            });
+            return Optional.ofNullable(person);
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
     }
 
 

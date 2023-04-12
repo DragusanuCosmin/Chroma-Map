@@ -38,13 +38,14 @@ public class PersonController {
         return personService.updatePerson(id, person);
     }
 
-//    @GetMapping(path="{id}")
-//    public Person selectPersonById(@PathVariable("id") UUID id) {
-//        return personService.selectPersonbyId(id).orElse(null);
-//    }
+    @GetMapping(path = "id/{id}")
+    public Person selectPersonById(@PathVariable("id") UUID id) {
+        return personService.selectPersonbyId(id).orElse(null);
+    }
 
-    @GetMapping("{name}")
+    @GetMapping(path = "name/{name}")
     public Person selectPersonByName(@PathVariable("name") String name) {
         return personService.selectPersonbyName(name).orElse(null);
     }
+
 }
